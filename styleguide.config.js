@@ -1,6 +1,7 @@
 const path = require('path')
 module.exports = {
     components: 'src/components/**/*.tsx',
+    styleguideDir: 'docs',
     styleguideComponents: {
         Wrapper: path.join(__dirname, 'src/theme/Theme')
     },
