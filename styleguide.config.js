@@ -8,7 +8,7 @@ module.exports = {
         Wrapper: path.join(__dirname, 'src/components/Theme')
     },
     require: [
-        path.join(__dirname, 'src/components/Theme/index.css')
+        path.join(__dirname, 'src/components/Theme/Theme.module.css')
     ],
     theme: {
         fontFamily: {

@@ -1,12 +1,16 @@
-import { ThemeProvider, defaultTheme } from "evergreen-ui"
+import { ThemeProvider, Pane, defaultTheme } from "evergreen-ui"
 import Button from "./Button"
-import "./index.css"
+import styles from "./Theme.module.css"
 
 function Theme(props) {
     let defTheme:any = defaultTheme
 
-    const everPurple = {
+    const hoagieUI = {
       ...defTheme,
+      colors: {
+        ...defTheme.colors,
+        'hoagie-orange': '#DE7548',
+      },
       components: {
         ...defTheme.components,
         Button,
@@ -14,8 +18,10 @@ function Theme(props) {
       }
   
     return (
-      <ThemeProvider value={everPurple}>
+      <ThemeProvider value={hoagieUI}>
+        <Pane className={styles.document}>
           {props.children}
+        </Pane>
       </ThemeProvider>
     )
 }

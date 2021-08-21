@@ -2,9 +2,9 @@ import { Button, Pane, majorScale, minorScale } from "evergreen-ui"
 
 interface AuthButtonProps {
     /** defines whether the button is for "login" or "logout" */
-    variant: string;
+    variant?: string;
     /** optional custom url to direct; uses API endpoints by default */
-    href: string;
+    href?: string;
 }
 
 /** AuthButton is a button meant for logins and logout throughout
@@ -32,7 +32,7 @@ const AuthButton = ({
             height={56}
             width={majorScale(35)}
             background="purple600"
-            appearance="primary" 
+            appearance={isLogout ? "default" : "primary"}
         >
             { logo }
             <Pane display="flex">

@@ -1,5 +1,6 @@
 import { majorScale, Pane } from "evergreen-ui"
 import { ComponentType } from "react"
+import Link from "next/link"
 
 interface NavProps {
     /** the name of the hoagie project */
@@ -11,7 +12,7 @@ interface NavProps {
 const Nav = ({name, logoComponent}:NavProps) => {
     return (
         <Pane elevation={1}>
-            <Pane width="100%" height={20} background="purple600"></Pane>
+            <Pane width="100%" height={20} background="hoagie-orange"></Pane>
             <Pane display="flex" justifyContent="center" width="100%" height={majorScale(9)} background="white">
                 <Pane 
                     display="flex" 
@@ -22,7 +23,11 @@ const Nav = ({name, logoComponent}:NavProps) => {
                     paddingX={20}
                     fontSize={25}
                 >
-                    {logoComponent ? logoComponent : <Pane>hoagie<b>{name}</b></Pane>}
+                    <Link href="/">
+                        <Pane cursor="pointer">
+                            {logoComponent ? logoComponent : <Pane>hoagie<b>{name}</b></Pane>}
+                        </Pane>
+                    </Link>
                 </Pane>
             </Pane>
         </Pane>
