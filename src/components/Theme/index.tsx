@@ -2,7 +2,7 @@ import { ThemeProvider, defaultTheme } from "evergreen-ui"
 import Button from "./Button"
 import "./index.css"
 
-function Everpurple(props) {
+function Theme(props) {
     let defTheme:any = defaultTheme
 
     const everPurple = {
@@ -20,4 +20,4 @@ function Everpurple(props) {
     )
 }
 
-export default Everpurple
+export default Theme

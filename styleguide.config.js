@@ -1,12 +1,14 @@
 const path = require('path')
 module.exports = {
+    title: 'Hoagie UI Style Guide',
     components: 'src/components/**/*.tsx',
     styleguideDir: 'docs',
+    skipComponentsWithoutExample: true,
     styleguideComponents: {
-        Wrapper: path.join(__dirname, 'src/theme/Theme')
+        Wrapper: path.join(__dirname, 'src/components/Theme')
     },
     require: [
-        path.join(__dirname, 'src/theme/index.css')
+        path.join(__dirname, 'src/components/Theme/index.css')
     ],
     theme: {
         fontFamily: {
