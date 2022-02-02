@@ -1,15 +1,12 @@
 import { FC } from 'react'
-import Nav from "../Nav"
 import { Pane } from "evergreen-ui"
 
 interface LayoutProps {
-    name: string;
 }
 
-const Layout:FC<LayoutProps> = ({children, name}) => {
+const Layout:FC<LayoutProps> = ({children}) => {
     return (
-        <Pane height="100%">
-            <Nav name={name} />
+        <Pane height="100%" background="blue100">
             {children}
         </Pane>
     )
