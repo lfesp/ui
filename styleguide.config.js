@@ -11,6 +11,8 @@ module.exports = {
         path.join(__dirname, 'src/components/Theme/Theme.module.css'),
         path.join(__dirname, 'src/components/theme.css')
     ],
+    propsParser: require("react-docgen-typescript").withDefaultConfig([
+    ]).parse,
     theme: {
         color: {
             link: "#8F59EF",
