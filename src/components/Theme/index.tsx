@@ -14,7 +14,7 @@ interface ThemeProps {
  *  for all Hoagie applications.
  */
 function Theme({palette="purple", children}:ThemeProps) {
-  let defTheme:any = defaultTheme;
+  let defTheme = defaultTheme;
   let colorTheme;
 
   const hoagieUI = {
@@ -116,8 +116,8 @@ function Theme({palette="purple", children}:ThemeProps) {
           backgroundColor: "#F9DADA"
       },
       orange: {
-          color: "#996A13",
-          backgroundColor: "#F8E3DA"
+          color: "#BC5E00",
+          backgroundColor: "#FFE3C6"
       },
       yellow: {
           color: "#66460D",
@@ -282,20 +282,20 @@ function Theme({palette="purple", children}:ThemeProps) {
     title: "orange",
     colors: {
       ...hoagieUI.colors,
-      blue900: "#30170C",
-      blue800: "#5C311E",
-      blue700: "#85462B",
-      blue600: "#B25E3A",
-      blue500: "#DE7548",
-      blue400: "#FC9B72",
-      blue300: "#EBAC91",
-      blue200: "#EEBBA2",
-      blue100: "#F5D3C5",
-      blue50: "#F8E3DA",
-      blue25: "#FDF7F4",
-      selected: "#DE7548",
-      tint1: "#F8E3DA",
-      tint2: "#FCFAF9",
+      blue900: "#301F0E",
+      blue800: "#593714",
+      blue700: "#7C4813",
+      blue600: "#BC5E00",
+      blue500: "#E77500",
+      blue400: "#FC8C1B",
+      blue300: "#FFB164",
+      blue200: "#FFCB97",
+      blue100: "#FFE3C6",
+      blue50: "#FEE9D2",
+      blue25: "#FFF5EA",
+      selected: "#E77500",
+      tint1: "#f8e9da",
+      tint2: "#fcfaf9",
       border: {
           default: "#EEEEEE",
           muted: "#F1F1F1"
@@ -304,20 +304,20 @@ function Theme({palette="purple", children}:ThemeProps) {
           default: "#808080",
           muted: "#D2D2D2",
           disabled: "#D2D2D2",
-          selected: "#DE7548"
+          selected: "#E77500"
       },
       text: {
           danger: "#D14343",
           success: "#52BD95",
-          info: "#DE7548"
+          info: "#E77500"
       },
     },
     intents: {
       info: {
           background: "#FDF7F4",
-          border: "#DE7548",
-          text: "#B25E3A",
-          icon: "#DE7548"
+          border: "#E77500",
+          text: "#BC5E00",
+          icon: "#E77500"
       },
       success: {
           background: "#F5FBF8",
@@ -344,7 +344,7 @@ function Theme({palette="purple", children}:ThemeProps) {
       2: "0 0 1px rgba(100, 100, 100, 0.3), 0 5px 8px -4px rgba(100, 100, 100, 0.47)",
       3: "0 0 1px rgba(100, 100, 100, 0.3), 0 8px 10px -4px rgba(100, 100, 100, 0.47)",
       4: "0 0 1px rgba(100, 100, 100, 0.3), 0 16px 24px -8px rgba(100, 100, 100, 0.47)",
-      focusRing: "0 0 0 2px #F5D3C5"
+      focusRing: "0 0 0 2px #FFE3C6"
     },
   }
 

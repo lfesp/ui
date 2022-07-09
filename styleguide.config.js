@@ -22,4 +22,13 @@ module.exports = {
             base: '"Inter", sans-serif'
         },
     },
+    styles: function (theme) {
+        return {
+            Heading: {
+                heading: {
+                    fontWeight: 600,
+                }
+            }
+        }
+    }
 };
