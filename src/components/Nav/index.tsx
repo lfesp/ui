@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 
 interface NavProps {
-    /** name of app for hoagie[name] title */
+    /** name of app for hoagie{name} title */
     name: string;
     /** custom component in place of hoagie logo */
     logoComponent?: ComponentType;
@@ -13,7 +13,7 @@ interface NavProps {
     tabs?: Array<any>;
     /** authenticated user data */
     user?: any;
-    /** show 'beta' WIP disclaimer on app title  */
+    /** show 'beta' development disclaimer on hoagie app logo  */
     beta?: boolean;
 }
 
@@ -23,7 +23,7 @@ interface NavProps {
 const Nav = ({name, logoComponent, tabs=[], user, beta=false}:NavProps) => {
     const theme = useTheme();
     const router = useRouter();
-    const username = (user === undefined || user.user === undefined || user.isLoading) ? "Tammy Tiger" : user.user.name;
+    const username = user?.user ? (user.isLoading ? "Tammy Tiger" : user.user.name) : "Tammy Tiger";
 
     return (
         <Pane elevation={1}>
@@ -40,9 +40,13 @@ const Nav = ({name, logoComponent, tabs=[], user, beta=false}:NavProps) => {
                     fontSize={25}
                 >
                     <Link href="/">
-                        <Pane cursor="pointer" className="hoagie">
-                            {logoComponent ? logoComponent : <Pane>hoagie<b>{name}</b>
-                            {beta && <Text className="beta" color="blue400">beta</Text>}</Pane>}
+                        <Pane cursor="pointer" className="hoagie" position="relative">
+                            {logoComponent ? logoComponent : <Pane>
+                            <Text is="h2" display="inline-block" className="hoagie logo" color="grey900">hoagie</Text>
+                            <Text is="h2" display="inline-block" className="hoagie logo" color="blue500">{name}</Text>
+                            {beta &&
+                            <Text className="hoagie beta" position="absolute" color="grey900">(BETA)</Text> }
+                            </Pane>}
                         </Pane>
                     </Link>
                     <Pane display="flex" alignItems="center">
@@ -50,13 +54,13 @@ const Nav = ({name, logoComponent, tabs=[], user, beta=false}:NavProps) => {
                         {tabs.map((tab) => (
                             <Link href={tab.href} passHref>
                                 <Tab key={tab.title} is="a" id={tab.title}
-                                isSelected={router ? router.pathname === tab.href : false} appearance="navbar">
+                                isSelected={router?.pathname === tab.href} appearance="navbar">
                                 {tab.title}
                                 </Tab>
                             </Link>
                         ))}
                         </TabNavigation>
-                        {(user !== undefined && user.user !== undefined) && <Popover
+                        {user?.user && <Popover
                             content={
                             <ProfileCard user={user}/>
                             }
