@@ -11,7 +11,7 @@ const user = {
         email: "hoagie@princeton.edu",
         name: "Tammy Tiger",
         nickname: "hoagie"
-    }
+    },
 };
 <Nav name="test" user={user} />
 ```

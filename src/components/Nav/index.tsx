@@ -8,7 +8,9 @@ interface NavProps {
     /** name of app for hoagie{name} title */
     name: string;
     /** custom component in place of hoagie logo */
-    logoComponent?: ComponentType;
+    LogoComponent?: ComponentType;
+    /** custom component in place of header color strip */
+    HeaderComponent?: ComponentType;
     /** list of tab objects for navbar, with title and href fields */
     tabs?: Array<any>;
     /** authenticated user data */
@@ -20,14 +22,14 @@ interface NavProps {
 /** Nav is a navbar meant for internal navigations throughout
  *  different Hoagie applications.
  */
-const Nav = ({name, logoComponent, tabs=[], user, beta=false}:NavProps) => {
+const Nav = ({name, LogoComponent, HeaderComponent, tabs=[], user, beta=false}:NavProps) => {
     const theme = useTheme();
     const router = useRouter();
     const username = user?.user ? (user.isLoading ? "Tammy Tiger" : user.user.name) : "Tammy Tiger";
 
     return (
         <Pane elevation={1}>
-            <Pane width="100%" height={20} background="blue500"></Pane>
+            {HeaderComponent ? <HeaderComponent /> : <Pane width="100%" height={20} background="blue500"></Pane>}
             <Pane display="flex" justifyContent="center" width="100%" height={majorScale(9)} background="white">
                 <Pane 
                     display="flex" 
@@ -40,13 +42,12 @@ const Nav = ({name, logoComponent, tabs=[], user, beta=false}:NavProps) => {
                     fontSize={25}
                 >
                     <Link href="/">
-                        <Pane cursor="pointer" className="hoagie" position="relative">
-                            {logoComponent ? logoComponent : <Pane>
-                            <Text is="h2" display="inline-block" className="hoagie logo" color="grey900">hoagie</Text>
-                            <Text is="h2" display="inline-block" className="hoagie logo" color="blue500">{name}</Text>
-                            {beta &&
-                            <Text className="hoagie beta" position="absolute" color="grey900">(BETA)</Text> }
-                            </Pane>}
+                        <Pane cursor="pointer" position="relative">
+                          {LogoComponent ? LogoComponent : <Pane>
+                          <Text is="h2" display="inline-block" className="hoagie logo" color="grey900">hoagie</Text>
+                          <Text is="h2" display="inline-block" className="hoagie logo" color="blue500">{name}</Text>
+                          {beta && <Text className="hoagie beta" position="absolute" color="grey900">(BETA)</Text>}
+                          </Pane>}
                         </Pane>
                     </Link>
                     <Pane display="flex" alignItems="center">

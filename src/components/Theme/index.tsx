@@ -1,6 +1,6 @@
-import { ThemeProvider, Pane, defaultTheme } from "evergreen-ui"
+import { ThemeProvider, defaultTheme } from "evergreen-ui"
 import Tab from "./Tab"
-import styles from "./Theme.module.css"
+import "./Theme.module.css"
 
 interface ThemeProps {
   /** alternate color theme, default is purple (current options: "purple", "blue", "orange") */
@@ -68,9 +68,13 @@ function Theme({palette="purple", children}:ThemeProps) {
       purple600: "#6E62B6",
       purple100: "#E7E4F9",
       teal800: "#0F5156",
+      teal300: "#7CE0E6",
       teal100: "#D3F5F7",
       yellow800: "#66460D",
+      yellow300: "#FFD079",
+      yellow200: "#FFDFA6",
       yellow100: "#FFEFD2",
+      rblue300: "#85A3FF", // real blue
       muted: "#808080",
       default: "#343434",
       dark: "#000000",
@@ -363,12 +367,9 @@ function Theme({palette="purple", children}:ThemeProps) {
   }
 
   // document.body.style.backgroundColor = colorTheme.colors.blue100;
-
   return (
     <ThemeProvider value={colorTheme}>
-      <Pane className={styles.document}>
         {children}
-      </Pane>
     </ThemeProvider>
   )
 }

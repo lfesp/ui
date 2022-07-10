@@ -1,6 +1,4 @@
-import {
-    majorScale, Button, Link, Heading, Card, Avatar, useTheme,
-} from 'evergreen-ui'
+import { majorScale, Button, Link, Heading, Card, Avatar, useTheme} from "evergreen-ui"
 
 interface CardProps {
     /** authenticated user data */

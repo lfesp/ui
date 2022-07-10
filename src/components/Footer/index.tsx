@@ -28,14 +28,10 @@ const Footer = () => {
             display="flex"
             alignItems="center"
         >
-          <Pane
-            marginRight={8}
-          >
+          <Pane marginRight={8} >
             {logo}
           </Pane>
-          <Pane
-            paddingBottom={4}
-          >
+          <Pane paddingBottom={3}>
             Made by <b>Hoagie Club.</b>
           </Pane>
         </Pane>
