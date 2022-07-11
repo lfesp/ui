@@ -8,7 +8,6 @@ module.exports = {
         Wrapper: path.join(__dirname, 'src/components/Theme')
     },
     require: [
-        path.join(__dirname, 'src/components/Theme/Theme.module.css'),
         path.join(__dirname, 'src/components/theme.css')
     ],
     propsParser: require("react-docgen-typescript").withDefaultConfig([

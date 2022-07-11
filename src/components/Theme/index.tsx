@@ -1,7 +1,5 @@
 import { ThemeProvider, defaultTheme } from "evergreen-ui"
 import Tab from "./Tab"
-import "./Theme.module.css"
-
 interface ThemeProps {
   /** alternate color theme, default is purple (current options: "purple", "blue", "orange") */
   palette?: string;
