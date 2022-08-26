@@ -1,9 +1,14 @@
-import { majorScale, Button, Link, Heading, Card, Avatar, useTheme} from "evergreen-ui"
+import {
+    majorScale, Button, Link, Heading, Card, Avatar, useTheme,
+} from 'evergreen-ui'
 
 interface CardProps {
     /** authenticated user data */
     user: any;
 }
+
+const defName = 'Tammy Tiger';
+const defEmail = 'hoagie@princeton.edu';
 
 /** ProfileCard is a profile card meant for display of user information
  *  throughout different Hoagie applications.
@@ -11,8 +16,8 @@ interface CardProps {
 function ProfileCard({ user }:CardProps) {
     const theme = useTheme();
 
-    const name = user?.user ? (user.isLoading ? 'Tammy Tiger' : user.user.name) : 'Tammy Tiger';
-    const email = user?.user ? (user.isLoading ? 'Tammy Tiger' : user.user.email) : 'hoagie@princeton.edu';
+    const name = user?.isLoading ? defName : (user?.user?.name ?? defName);
+    const email = user?.isLoading ? defEmail : (user?.user?.email ?? defEmail);
 
     return (
         <Card
